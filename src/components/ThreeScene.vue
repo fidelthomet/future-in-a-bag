@@ -57,7 +57,7 @@ export default {
     const { width, height } = this
     this.camera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, 1, 1000)
     this.scene = new THREE.Scene()
-    this.renderer = new THREE.WebGLRenderer({ antialias: true })
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     this.container = new THREE.Group()
 
     const { camera, renderer, scene, $refs, animate, container } = this
@@ -69,7 +69,6 @@ export default {
     dirLight.position.set(1, 5, 4)
     scene.add(dirLight)
     scene.add(container)
-    scene.background = new THREE.Color(0x020212)
     $refs.three.appendChild(renderer.domElement)
 
     this.controls = new MapControls(camera, renderer.domElement)
@@ -109,12 +108,12 @@ export default {
       const { animate, scene, camera, renderer, controls } = this
       // camera.updateMatrixWorld()
       controls.update()
+      this.$emit('position', { x: -camera.position.x, y: camera.position.y })
       renderer.render(scene, camera)
       requestAnimationFrame(animate)
     },
     resize () {
       const { width, height, camera, renderer } = this
-      console.log(camera.position.x, camera.position.y, camera.position.z)
       camera.left = width / -2
       camera.right = width / 2
       camera.top = height / 2
@@ -179,6 +178,7 @@ export default {
 </style>
 <style lang="scss">
 .three-scene {
+  position: absolute;
   canvas {
     display: block
   }
