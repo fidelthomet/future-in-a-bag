@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Network from '../views/Network.vue'
 
 Vue.use(VueRouter)
 
@@ -13,8 +13,8 @@ export default new VueRouter({
     // },
     {
       path: '/:scenario?',
-      name: 'home',
-      component: Home
+      name: 'Network',
+      component: Network
     }
   ]
 })
