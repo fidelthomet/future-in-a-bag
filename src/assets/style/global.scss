@@ -1,0 +1,30 @@
+// @use "sass:color";
+
+$spacing: 2rem;
+$font-size: 100%;
+
+$color-black: #160F29;
+$color-white: #ffffff;
+$color-smart: #F8FF00;
+$color-dumb: #FF00D3;
+$color-pale-gray: #F3FBFA;
+
+$transition: 0.4s;
+
+@mixin tint($property) {
+  &.smart {
+    #{$property}: $color-smart;
+  }
+  &.dumb {
+    #{$property}: $color-dumb;
+  }
+  &.black {
+    #{$property}: $color-black;
+  }
+}
+
+:export {
+  smart: $color-smart;
+  dumb: $color-dumb;
+  black: $color-black;
+}
