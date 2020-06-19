@@ -65,9 +65,11 @@ export default {
     camera.lookAt(new THREE.Vector3(0, 0, 0))
     renderer.setSize(width, height)
     renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.outputEncoding = THREE.sRGBEncoding
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1)
     const dirLight = new THREE.DirectionalLight(0xffffff, 1)
-    dirLight.position.set(1, 5, 4)
-    scene.add(dirLight)
+    dirLight.position.set(100, 500, 400)
+    scene.add(dirLight, ambientLight)
     scene.add(container)
     $refs.three.appendChild(renderer.domElement)
 
@@ -83,24 +85,6 @@ export default {
     this.controls.maxDistance = 500
 
     this.controls.maxPolarAngle = Math.PI / 2
-
-    var geometry = new THREE.BoxBufferGeometry(1, 1, 1)
-    geometry.translate(0, 0.5, 0)
-    var material = new THREE.MeshPhongMaterial({ color: 0xffffff, flatShading: true })
-
-    for (var i = 0; i < 500; i++) {
-      var mesh = new THREE.Mesh(geometry, material)
-      mesh.position.x = Math.random() * 1600 - 800
-      mesh.position.y = Math.random() * 1600 - 800
-      mesh.position.z = 0
-      mesh.scale.x = 20
-      mesh.scale.y = 20
-      mesh.scale.z = 20
-      mesh.updateMatrix()
-      mesh.matrixAutoUpdate = false
-      scene.add(mesh)
-    }
-
     animate()
   },
   methods: {
