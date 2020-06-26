@@ -1,8 +1,8 @@
 {
-  "name": "Smart Fashion",
+  "name": "Desert City",
   "crises": [
-    "Data theft",
-    "Terrorist attacks"
+    "Failure of climate-change mitiagtion and adaptation",
+    "Fiscal crises"
   ],
   "description": "Extreme Wettereignisse und Trockenheit sorgen weltweit immer häufiger für gravierende Ernteausfälle. Die Ressource «Nahrungsmittel» ist auf dem Markt hart umkämpft, kritische Infrastrukturen und Lieferketten werden zum Ziel von Angriffen. Als Alternative haben sich in Städten kleine autonome Kooperationen zur Nahrungsmittelproduktion zusammengefunden. In Berlin werden Salate und Gemüse unter der Hochbahn angebaut. Jede*r Bedürftige kann sich davon eine Portion am Tag holen. Per öffentlicher Smartphones an diesen Brücken kann man ausserdem gucken, bei welchen Restaurants zu viel Essen produziert wurde und übrig geblieben ist: Auch dieses können sich Bedürftige kostenlos an den jeweiligen Orten abholen.",
   "smart": {
