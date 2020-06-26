@@ -50,15 +50,4 @@ export default {
     }
   }
 }
-
-@keyframes font-var {
-  0% {
-    font-variation-settings: "wght" 700, "slnt" -5;
-  }
-
-  100% {
-    font-variation-settings: "wght" 900, "slnt" -10;
-    transform: scale(1.1);
-  }
-}
 </style>
