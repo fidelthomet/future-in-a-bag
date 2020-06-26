@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view v-if="initialized"/>
-    <div v-else class="loader">
+    <router-view/>
+    <div v-if="!initialized" class="loader">
       <svg width="400" height="400" viewBox="0 0 200 200">
         <g transform="translate(100 100)">
           <g class="anim dumb"><circle r="50" cx="50"/></g>
@@ -35,6 +35,9 @@ export default {
 <style lang="scss">
 @import "@/assets/style/global";
 .loader {
+  position: absolute;
+  width: 100%;
+  background: $color-white;
   display: flex;
   flex-direction: column;
   justify-content: center;

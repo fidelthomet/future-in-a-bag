@@ -2,22 +2,30 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import Scenarios from 'dir-loader!@/assets/scenarios/scenarios.js' // eslint-disable-line import/no-webpack-loader-syntax
-const scenarios = (Object.keys(Scenarios).map(key => ({ hash: key.replace(/\.json$/, ''), ...Scenarios[key].src })))
+import worker from 'workerize-loader!../assets/js/network' // eslint-disable-line import/no-webpack-loader-syntax
 
-const crises = [...new Set(scenarios.map(s => s.crises).flat())]
-console.log(crises)
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     initialized: false,
-    crises
+    crises: [],
+    scenarios: []
   },
   mutations: {
+    set (state, props) {
+      Object.keys(props).forEach(p => {
+        state[p] = props[p]
+      })
+    }
   },
   actions: {
-    init () {
+    init ({ commit }) {
       console.log('init')
+      worker().network({ scenarios: (Object.keys(Scenarios).map(key => ({ hash: key.replace(/\.json$/, ''), ...Scenarios[key].src }))) }).then(({ scenarios, crises }) => {
+        console.log('worked')
+        commit('set', { scenarios, crises, initialized: true })
+      })
     }
   },
   modules: {

@@ -1,17 +1,11 @@
 <template>
   <div class="network" v-resize:debounce.initial="resize">
     <ThreeScene :width="width" :height="height" @position="setPosition">
-      <ScenarioBubble :x="200" :y="300"/>
-      <ScenarioBubble :x="500" :y="-100"/>
-      <ScenarioBubble :x="-400" :y="100"/>
-      <ScenarioBubble :x="-500" :y="-300"/>
+      <ScenarioBubble v-for="(s, i) in scenarios" :key="`scenario-${i}`" :x="s.x" :y="s.y"/>
     </ThreeScene>
     <div class="overlay">
       <div class="anchor" :style="{transform: `translate(${position.x}px, ${position.y}px)`}">
-        <CrisisCircle :x="0" :y="0" label="crisis"/>
-        <CrisisCircle :x="300" :y="-400" label="crisis"/>
-        <CrisisCircle :x="-900" :y="-100" label="crisis"/>
-        <CrisisCircle :x="600" :y="400" label="crisis"/>
+        <CrisisCircle v-for="(c, i) in crises" :key="`crisis-${i}`" :x="c.x" :y="c.y" :label="c.name"/>
       </div>
     </div>
   </div>
@@ -22,6 +16,7 @@ import ThreeScene from '@/components/ThreeScene.vue'
 import ScenarioBubble from '@/components/ScenarioBubble.vue'
 import CrisisCircle from '@/components/CrisisCircle.vue'
 import resize from 'vue-resize-directive'
+import { mapState } from 'vuex'
 export default {
   name: 'network',
   components: {
@@ -38,6 +33,9 @@ export default {
       height: 512,
       position: { x: 0, y: 0 }
     }
+  },
+  computed: {
+    ...mapState(['crises', 'scenarios'])
   },
   methods: {
     resize (el) {
