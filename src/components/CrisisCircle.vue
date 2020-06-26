@@ -30,7 +30,7 @@ export default {
 .crisis-circle {
   position: absolute;
   .inner {
-    background: $color-black;
+    // background: $color-white;
     height: 256px;
     width: 256px;
     transform: translate(-50%, -50%);
@@ -41,7 +41,8 @@ export default {
 
     span {
       font-size: 2em;
-      color: $color-white;
+      text-align: center;
+      color: $color-black;
       animation-name: font-var;
       animation-duration: 1s;
       animation-iteration-count: infinite;

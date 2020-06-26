@@ -92,7 +92,7 @@ export default {
       const { animate, scene, camera, renderer, controls } = this
       // camera.updateMatrixWorld()
       controls.update()
-      this.$emit('position', { x: -camera.position.x, y: camera.position.y })
+      this.$emit('position', { x: -camera.position.x, y: camera.position.y, zoom: camera.zoom })
       renderer.render(scene, camera)
       requestAnimationFrame(animate)
     },

@@ -10,7 +10,8 @@ export default new Vuex.Store({
   state: {
     initialized: false,
     crises: [],
-    scenarios: []
+    scenarios: [],
+    links: []
   },
   mutations: {
     set (state, props) {
@@ -21,10 +22,8 @@ export default new Vuex.Store({
   },
   actions: {
     init ({ commit }) {
-      console.log('init')
-      worker().network({ scenarios: (Object.keys(Scenarios).map(key => ({ hash: key.replace(/\.json$/, ''), ...Scenarios[key].src }))) }).then(({ scenarios, crises }) => {
-        console.log('worked')
-        commit('set', { scenarios, crises, initialized: true })
+      worker().network({ scenarios: (Object.keys(Scenarios).map(key => ({ hash: key.replace(/\.json$/, ''), ...Scenarios[key].src }))) }).then(({ scenarios, crises, links }) => {
+        commit('set', { scenarios, crises, links, initialized: true })
       })
     }
   },
