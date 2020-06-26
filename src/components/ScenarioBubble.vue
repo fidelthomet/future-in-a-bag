@@ -19,10 +19,10 @@ export default {
       type: Number
     },
     dumb: {
-      default: 'dumb.glb'
+      default: 'dumb-min.glb'
     },
     smart: {
-      default: 'smart.glb'
+      default: 'smart-min.glb'
     }
   },
   data () {

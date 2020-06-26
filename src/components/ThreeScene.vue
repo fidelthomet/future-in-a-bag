@@ -77,7 +77,7 @@ export default {
     this.controls.enableDamping = true
     this.controls.enableKeys = false
     this.controls.enableRotate = false
-    this.controls.enableZoom = false
+    // this.controls.enableZoom = false
     this.controls.dampingFactor = 0.2
     this.controls.screenSpacePanning = true
 
