@@ -21,18 +21,18 @@
     <transition name="fade">
       <div v-if="highlight" class="blur"/>
     </transition>
-    <ThreeScene :width="width" :height="height" @position="setPosition" non-interactive :position="position">
-      <ScenarioBubble v-for="(s, i) in scenarios.filter(d => d.hash === highlightHash)" :key="`scenario-${i}`"
-        :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
-        :smart="s.models.smart" :dumb="s.models.dumb"/>
-    </ThreeScene>
     <transition name="fade">
       <div v-if="highlight" class="overlay">
         <div class="anchor" :style="{transform: `scale(${position.zoom}) translate(${position.x}px, ${position.y}px)`}">
           <ScenarioDetails :scenario="highlight" :x="highlight.x * networkScale" :y="highlight.y * networkScale"/>
         </div>
-    </div>
+      </div>
     </transition>
+    <ThreeScene :width="width" :height="height" @position="setPosition" non-interactive :position="position">
+      <ScenarioBubble v-for="(s, i) in scenarios.filter(d => d.hash === highlightHash)" :key="`scenario-${i}`"
+        :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
+        :smart="s.models.smart" :dumb="s.models.dumb"/>
+    </ThreeScene>
   </div>
 </template>
 

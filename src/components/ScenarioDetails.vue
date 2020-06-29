@@ -1,9 +1,18 @@
 <template>
   <div class="scenario-details" :style="{transform: `translate(${x}px, ${-y}px)`}">
-    <div class="inner">
-      <span class="wrapper">
-        <span>{{ scenario.name }}</span>
-      </span>
+    <div class="info">
+      <div class="title">{{ scenario.name }}</div>
+      <div class="description">{{ scenario.description }}</div>
+    </div>
+    <div class="quote smart">
+      <span class="name">{{ scenario.smart.name }}</span>
+      <br>
+      <span>«{{ scenario.smart.quote }}»</span>
+    </div>
+    <div class="quote dumb">
+      <span class="name">{{ scenario.dumb.name }}</span>
+      <br>
+      <span>«{{ scenario.dumb.quote }}»</span>
     </div>
   </div>
 </template>
@@ -31,32 +40,52 @@ export default {
 @import "@/assets/style/global";
 .scenario-details {
   position: absolute;
-  .inner {
-    // background: $color-white;
-    height: 256px;
-    width: 256px;
-    transform: translate(-50%, -50%);
+  .info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+    position: absolute;
+    transform: translate(calc(-33% + #{$spacing / 2}), calc(-200px - 100%));
+    width: 960px;
 
-    > span {
-      font-size: 2em;
-      text-align: center;
-      color: $color-black;
-      animation-name: font-var;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      animation-timing-function: ease-in-out;
-      line-height: 1.2;
-      // text-shadow: 0px 0px 5px $color-white;
-      // background: $color-white;
-      > span {
-        padding: 0 $spacing / 8;
-        background: $color-white;
-      }
+    .title {
+      width: 320px;
+      font-size: 3.6em;
+      // font-weight: 900;
+      font-variation-settings: "wght" 900, "slnt" -10;
+      text-align: right;
+      padding: 0 $spacing 0 0;
+      line-height: 0.9;
+    }
+
+    .description {
+      width: 640px;
+      column-count: 2;
+      column-gap: $spacing;
+      hyphens: auto;
+    }
+  }
+  .quote {
+    position: absolute;
+    width: 480px;
+    padding: 0 $spacing / 2;
+
+    span {
+      font-variation-settings: "slnt" -10;
+    }
+
+    .name {
+      font-weight: bold;
+      font-variation-settings: "slnt" 0;
+    }
+
+    &.smart {
+      border-right: 10px solid $color-smart;
+      transform: translate(calc(-170px - 100%), calc(-20px - 100%));
+      text-align: right;
+    }
+
+    &.dumb {
+      border-left: 10px solid $color-dumb;
+      transform: translate(calc(170px), 20px);
     }
   }
 }
