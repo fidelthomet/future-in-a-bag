@@ -22,16 +22,24 @@
       <div v-if="highlight" class="blur"/>
     </transition>
     <ThreeScene :width="width" :height="height" @position="setPosition" non-interactive :position="position">
-      <ScenarioBubble v-for="(s, i) in scenarios.filter(d => d.hash === highlight)" :key="`scenario-${i}`"
+      <ScenarioBubble v-for="(s, i) in scenarios.filter(d => d.hash === highlightHash)" :key="`scenario-${i}`"
         :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
         :smart="s.models.smart" :dumb="s.models.dumb"/>
     </ThreeScene>
+    <transition name="fade">
+      <div v-if="highlight" class="overlay">
+        <div class="anchor" :style="{transform: `scale(${position.zoom}) translate(${position.x}px, ${position.y}px)`}">
+          <ScenarioDetails :scenario="highlight" :x="highlight.x * networkScale" :y="highlight.y * networkScale"/>
+        </div>
+    </div>
+    </transition>
   </div>
 </template>
 
 <script>
 import ThreeScene from '@/components/ThreeScene.vue'
 import ScenarioBubble from '@/components/ScenarioBubble.vue'
+import ScenarioDetails from '@/components/ScenarioDetails.vue'
 import CrisisCircle from '@/components/CrisisCircle.vue'
 import resize from 'vue-resize-directive'
 import { mapState } from 'vuex'
@@ -40,6 +48,7 @@ export default {
   components: {
     ThreeScene,
     ScenarioBubble,
+    ScenarioDetails,
     CrisisCircle
   },
   directives: {
@@ -55,7 +64,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(['crises', 'scenarios', 'links'])
+    ...mapState(['crises', 'scenarios', 'links']),
+    highlightHash () {
+      return this.highlight != null ? this.highlight.hash : null
+    }
   },
   methods: {
     resize (el) {
@@ -70,7 +82,7 @@ export default {
       this.highlight = null
     },
     detail (id) {
-      this.highlight = id
+      this.highlight = this.scenarios.find(s => s.hash === id)
     }
   }
 }
