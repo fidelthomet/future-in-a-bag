@@ -10,7 +10,8 @@
     </svg>
     <ThreeScene :width="width" :height="height" @position="setPosition" @click="clicked($event)" @detail="detail($event)">
       <ScenarioBubble v-for="(s, i) in scenarios" :key="`scenario-${i}`"
-        :id="s.hash" :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"/>
+        :id="s.hash" :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
+        :smart="s.models.smart" :dumb="s.models.dumb"/>
     </ThreeScene>
     <div class="overlay">
       <div class="anchor" :style="{transform: `scale(${position.zoom}) translate(${position.x}px, ${position.y}px)`}">
@@ -22,7 +23,8 @@
     </transition>
     <ThreeScene :width="width" :height="height" @position="setPosition" non-interactive :position="position">
       <ScenarioBubble v-for="(s, i) in scenarios.filter(d => d.hash === highlight)" :key="`scenario-${i}`"
-        :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"/>
+        :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
+        :smart="s.models.smart" :dumb="s.models.dumb"/>
     </ThreeScene>
   </div>
 </template>
@@ -109,10 +111,10 @@ export default {
   }
 
   .blur {
-    position: absolute;
+    position: fixed;
     pointer-events: none;
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
     background-color: transparentize($color-white, 0.2);
     @supports (
       (-webkit-backdrop-filter: saturate(150%) blur(10px))

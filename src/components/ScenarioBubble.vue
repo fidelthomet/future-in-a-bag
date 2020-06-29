@@ -1,6 +1,6 @@
 <script>
 import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import colors from '@/assets/style/global.scss'
 export default {
   name: 'scenario-bubble',
@@ -19,10 +19,12 @@ export default {
       type: Number
     },
     dumb: {
-      default: 'dumb-min.glb'
+      type: Object,
+      default: null
     },
     smart: {
-      default: 'smart-min.glb'
+      type: Object,
+      default: null
     },
     axis: {
       type: Object,
@@ -78,29 +80,32 @@ export default {
       this.setPosition()
       this.container.add(this.group)
 
-      var loader = new GLTFLoader()
+      // var loader = new GLTFLoader()
 
-      loader.load(`./models/${this.smart}`, gltf => {
-        const model = gltf.scene
-        model.scale.set(400, 400, 400)
-        model.translateZ(-40)
-        model.rotateX(Math.PI / -2)
-        this.group.add(model)
-      }, undefined, function (error) {
-        console.error(error)
-      })
+      // loader.load(`./models/${this.smart}`, gltf => {
+      //   const model = gltf.scene
+      //   model.scale.set(400, 400, 400)
+      //   model.translateZ(-40)
+      //   model.rotateX(Math.PI / -2)
+      //   this.group.add(model)
+      // }, undefined, function (error) {
+      //   console.error(error)
+      // })
 
-      loader.load(`./models/${this.dumb}`, gltf => {
-        const model = gltf.scene
-        model.scale.set(400, 400, 400)
-        model.translateZ(48)
-        model.rotateX(Math.PI / 2)
-        this.group.add(model)
-      }, undefined, function (error) {
-        console.error(error)
-      })
+      // loader.load(`./models/${this.dumb}`, gltf => {
+      //   const model = gltf.scene
+      //   model.scale.set(400, 400, 400)
+      //   model.translateZ(48)
+      //   model.rotateX(Math.PI / 2)
+      this.group.add(new THREE.Object3D().copy(this.smart))
+      this.group.add(new THREE.Object3D().copy(this.dumb))
+      this.group.visible = false
+      // this.group.add(this.dumb.copy())
+      // }, undefined, function (error) {
+      //   console.error(error)
+      // })
 
-      animate()
+      requestAnimationFrame(animate)
 
       this.getContainer(c => {
         c.add(this.container)
@@ -124,6 +129,7 @@ export default {
     },
     animate (t = 0) {
       const { animate, group, axis } = this
+      this.group.visible = true
       group.setRotationFromAxisAngle(axis, t * 0.001)
       requestAnimationFrame(animate)
     },

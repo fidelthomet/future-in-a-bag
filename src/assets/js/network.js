@@ -1,6 +1,7 @@
 import { forceSimulation, forceLink, forceManyBody, forceX, forceY } from 'd3-force'
 import { scaleLinear } from 'd3-scale'
 import { Vector3 } from 'three'
+
 export function network ({ scenarios }) {
   const crises = [...new Set(scenarios.map(s => s.crises).flat())].map(crisis => {
     return {
