@@ -1,5 +1,9 @@
 <template>
-  <div class="three-scene" ref="three" @mousemove="onMouseMove">
+  <div class="three-scene" :class="{ 'non-interactive': nonInteractive }" ref="three"
+    @mousedown="onMouseDown"
+    @mouseup="onMouseUp"
+    @touchstart="onMouseDown"
+    @touchend="onMouseUp">
     <slot/>
   </div>
 </template>
@@ -18,21 +22,13 @@ export default {
       default: 768,
       type: Number
     },
-    step: {
-      default: 0,
-      type: Number
+    position: {
+      type: Object,
+      default: () => ({ x: 0, y: 0, zoom: 1 })
     },
-    x: {
-      default: 0,
-      type: Number
-    },
-    y: {
-      default: 0,
-      type: Number
-    },
-    z: {
-      default: 0,
-      type: Number
+    nonInteractive: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -42,7 +38,9 @@ export default {
       camera: null,
       container: null,
       controls: null,
-      mouse: { x: 5000, y: 5000 }
+      mouse: { x: 5000, y: 5000 },
+      mouseDown: false,
+      mouseMoved: false
     }
   },
   provide () {
@@ -60,7 +58,7 @@ export default {
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     this.container = new THREE.Group()
 
-    const { camera, renderer, scene, $refs, animate, container } = this
+    const { camera, renderer, scene, $refs, animate, container, nonInteractive } = this
     camera.position.set(0, 0, 1000)
     camera.lookAt(new THREE.Vector3(0, 0, 0))
     renderer.setSize(width, height)
@@ -72,27 +70,39 @@ export default {
     scene.add(dirLight, ambientLight)
     scene.add(container)
     $refs.three.appendChild(renderer.domElement)
+    if (!nonInteractive) {
+      this.controls = new MapControls(camera, renderer.domElement)
+      this.controls.enableDamping = true
+      this.controls.enableKeys = false
+      this.controls.enableRotate = false
+      // this.controls.enableZoom = false
+      this.controls.dampingFactor = 0.2
+      this.controls.screenSpacePanning = true
 
-    this.controls = new MapControls(camera, renderer.domElement)
-    this.controls.enableDamping = true
-    this.controls.enableKeys = false
-    this.controls.enableRotate = false
-    // this.controls.enableZoom = false
-    this.controls.dampingFactor = 0.2
-    this.controls.screenSpacePanning = true
+      this.controls.minDistance = 100
+      this.controls.maxDistance = 500
 
-    this.controls.minDistance = 100
-    this.controls.maxDistance = 500
+      this.controls.addEventListener('change', () => {
+        this.onMouseMove()
+      })
 
-    this.controls.maxPolarAngle = Math.PI / 2
+      this.controls.maxPolarAngle = Math.PI / 2
+    }
     animate()
   },
   methods: {
     animate (t = 0) {
-      const { animate, scene, camera, renderer, controls } = this
-      // camera.updateMatrixWorld()
-      controls.update()
-      this.$emit('position', { x: -camera.position.x, y: camera.position.y, zoom: camera.zoom })
+      const { animate, scene, camera, renderer, controls, nonInteractive, position } = this
+
+      if (!nonInteractive) {
+        controls.update()
+        this.$emit('position', { x: -camera.position.x, y: camera.position.y, zoom: camera.zoom })
+      } else {
+        camera.position = new THREE.Vector3(-position.x, position.y, 500)
+        camera.zoom = position.zoom
+        // camera.updateMatrixWorld()
+        camera.updateProjectionMatrix()
+      }
       renderer.render(scene, camera)
       requestAnimationFrame(animate)
     },
@@ -105,9 +115,26 @@ export default {
       camera.updateProjectionMatrix()
       renderer.setSize(width, height)
     },
-    onMouseMove (event) {
-      this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1
-      this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+    // onMouseMove (event) {
+    //   this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+    //   this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+    // },
+    onMouseMove () {
+      if (this.mouseDown) this.mouseMoved = true
+    },
+    onMouseDown () {
+      this.mouseMoved = false
+      this.mouseDown = true
+    },
+    onMouseUp (e) {
+      if (!this.mouseMoved) this.$emit('click', e)
+      // console.log(e.clientX || e.changedTouches[0].clientX)
+      this.mouse = {
+        x: ((e.clientX || e.changedTouches[0].clientX) / window.innerWidth) * 2 - 1,
+        y: -((e.clientY || e.changedTouches[0].clientY) / window.innerHeight) * 2 + 1
+      }
+      this.mouseDown = false
+      this.mouseMoved = false
     },
     getProp (prop) {
       return (found) => {
@@ -140,6 +167,9 @@ export default {
         }
       }
       check()
+    },
+    clicked (e) {
+      this.$emit('click', e)
     }
   },
   watch: {
@@ -158,6 +188,10 @@ export default {
 .three-scene {
   width: 100vw;
   height: 100%;
+
+  &.non-interactive {
+    pointer-events: none;
+  }
 }
 </style>
 <style lang="scss">

@@ -1,7 +1,9 @@
 <template>
   <div class="crisis-circle" :style="{transform: `translate(${x}px, ${-y}px)`}">
     <div class="inner">
-      <span>{{ label }}</span>
+      <span class="wrapper">
+        <span>{{ label }}</span>
+      </span>
     </div>
   </div>
 </template>
@@ -39,7 +41,7 @@ export default {
     align-items: center;
     border-radius: 50%;
 
-    span {
+    > span {
       font-size: 2em;
       text-align: center;
       color: $color-black;
@@ -48,6 +50,13 @@ export default {
       animation-iteration-count: infinite;
       animation-direction: alternate;
       animation-timing-function: ease-in-out;
+      line-height: 1.2;
+      // text-shadow: 0px 0px 5px $color-white;
+      // background: $color-white;
+      > span {
+        padding: 0 $spacing / 8;
+        background: $color-white;
+      }
     }
   }
 }

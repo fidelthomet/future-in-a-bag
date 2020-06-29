@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import colors from '@/assets/style/global.scss'
 export default {
   name: 'scenario-bubble',
-  inject: ['getContainer'],
+  inject: ['getContainer', '$mouse', '$camera'],
   props: {
     size: {
       default: 128,
@@ -23,6 +23,13 @@ export default {
     },
     smart: {
       default: 'smart-min.glb'
+    },
+    axis: {
+      type: Object,
+      default: () => new THREE.Vector3(0, 0, 1)
+    },
+    id: {
+      default: null
     }
   },
   data () {
@@ -30,11 +37,17 @@ export default {
       container: new THREE.Group(),
       map: new THREE.MeshBasicMaterial(),
       group: new THREE.Group(),
-      axis: new THREE.Vector3(Math.random() - 0.5, Math.random() - 0.5, (Math.random() - 0.5) * 0.2).normalize(),
-      time: 0
+      sphere: null,
+      raycaster: new THREE.Raycaster()
     }
   },
   computed: {
+    mouse () {
+      return this.$mouse()
+    },
+    camera () {
+      return this.$camera()
+    }
   },
   mounted () {
     this.init()
@@ -59,9 +72,9 @@ export default {
       matSphere.blending = THREE.AdditiveBlending
       const meshDumb = new THREE.Mesh(geometry, matDumb)
       const meshSmart = new THREE.Mesh(geometry, matSmart)
-      const meshSphere = new THREE.Mesh(sphere, matSphere)
+      this.sphere = new THREE.Mesh(sphere, matSphere)
       meshSmart.rotateX(Math.PI)
-      this.group.add(meshDumb, meshSmart, meshSphere)
+      this.group.add(meshDumb, meshSmart, this.sphere)
       this.setPosition()
       this.container.add(this.group)
 
@@ -110,16 +123,20 @@ export default {
       return new THREE.DataTexture(color, 2, 2, THREE.RGBFormat)
     },
     animate (t = 0) {
-      const { animate, time, group, axis } = this
-
-      const delta = t - time
-      group.rotateOnAxis(axis, delta * 0.001)
-      // camera.updateMatrixWorld()
-      this.time = t
+      const { animate, group, axis } = this
+      group.setRotationFromAxisAngle(axis, t * 0.001)
       requestAnimationFrame(animate)
     },
     setPosition () {
       this.group.position.set(this.x, this.y, 0)
+    },
+    hitTest (mouse) {
+      const { camera, raycaster, sphere } = this
+      raycaster.setFromCamera(mouse, camera)
+      const intersects = raycaster.intersectObjects([sphere])
+      if (intersects.length > 0) {
+        this.$parent.$emit('detail', this.id)
+      }
     }
   },
   watch: {
@@ -128,6 +145,9 @@ export default {
     },
     y () {
       this.setPosition()
+    },
+    mouse (mouse) {
+      this.hitTest(mouse)
     }
   }
 }

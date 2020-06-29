@@ -15,19 +15,19 @@ html {
   font-feature-settings: "ss01", "ss03", "cv10", "calt", "kern";
   color: $color-black;
 
-  .blur {
-    border-radius: 2px;
-    background: transparentize($color-pale-gray, 0.1);
+  // .blur {
+  //   border-radius: 2px;
+  //   background: transparentize($color-pale-gray, 0.1);
 
-    @supports (
-      (-webkit-backdrop-filter: saturate(180%) blur(20px))
-        or (backdrop-filter: saturate(180%) blur(20px))
-    ) {
-      background: transparentize($color-pale-gray, 0.3);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
-      backdrop-filter: saturate(180%) blur(10px);
-    }
-  }
+  //   @supports (
+  //     (-webkit-backdrop-filter: saturate(180%) blur(20px))
+  //       or (backdrop-filter: saturate(180%) blur(20px))
+  //   ) {
+  //     background: transparentize($color-pale-gray, 0.3);
+  //     -webkit-backdrop-filter: saturate(180%) blur(10px);
+  //     backdrop-filter: saturate(180%) blur(10px);
+  //   }
+  // }
 
   .fade-enter-active, .fade-leave-active {
     transition: opacity $transition;
