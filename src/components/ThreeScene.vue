@@ -64,8 +64,8 @@ export default {
     renderer.setSize(width, height)
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.outputEncoding = THREE.sRGBEncoding
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1)
-    const dirLight = new THREE.DirectionalLight(0xffffff, 1)
+    const ambientLight = new THREE.AmbientLight(0xffffff, 3)
+    const dirLight = new THREE.DirectionalLight(0xffffff, 3)
     dirLight.position.set(100, 500, 400)
     scene.add(dirLight, ambientLight)
     scene.add(container)

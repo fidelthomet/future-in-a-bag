@@ -70,15 +70,16 @@ export default {
       const matDumb = new THREE.MeshLambertMaterial({ color: colors.dumb })
       const matSmart = new THREE.MeshLambertMaterial({ color: colors.smart })
       // new MeshBasicMaterial({  })
-      const matSphere = new THREE.MeshBasicMaterial({ map: getTexture(), transparent: true, opacity: 0.4 })
+      const matSphere = new THREE.MeshBasicMaterial({ map: getTexture(), transparent: true, opacity: 0.5 })
       matSphere.blending = THREE.AdditiveBlending
       const meshDumb = new THREE.Mesh(geometry, matDumb)
       const meshSmart = new THREE.Mesh(geometry, matSmart)
       this.sphere = new THREE.Mesh(sphere, matSphere)
+      this.sphere.position.setZ(-100)
       meshSmart.rotateX(Math.PI)
-      this.group.add(meshDumb, meshSmart, this.sphere)
+      this.group.add(meshDumb, meshSmart)
       this.setPosition()
-      this.container.add(this.group)
+      this.container.add(this.group, this.sphere)
 
       // var loader = new GLTFLoader()
 
@@ -128,13 +129,15 @@ export default {
       return new THREE.DataTexture(color, 2, 2, THREE.RGBFormat)
     },
     animate (t = 0) {
-      const { animate, group, axis } = this
+      const { animate, group, sphere, axis } = this
       this.group.visible = true
       group.setRotationFromAxisAngle(axis, t * 0.001)
+      sphere.setRotationFromAxisAngle(axis, t * 0.001)
       requestAnimationFrame(animate)
     },
     setPosition () {
       this.group.position.set(this.x, this.y, 0)
+      this.sphere.position.set(this.x, this.y, -300)
     },
     hitTest (mouse) {
       const { camera, raycaster, sphere } = this
