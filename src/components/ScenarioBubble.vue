@@ -2,6 +2,9 @@
 import * as THREE from 'three'
 // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import colors from '@/assets/style/global.scss'
+// eslint-disable-next-line no-unused-vars
+import CapsuleGeometry from '@/assets/js/capsule.js'
+
 export default {
   name: 'scenario-bubble',
   inject: ['getContainer', '$mouse', '$camera'],
@@ -64,17 +67,30 @@ export default {
   },
   methods: {
     init () {
-      const { size, animate, getTexture } = this
-      const geometry = new THREE.CircleBufferGeometry(size, 64, 64)
-      const sphere = new THREE.SphereBufferGeometry(size, 64, 64)
+      const { size, animate /* getTexture */ } = this
+      const geometry = new THREE.CircleBufferGeometry(size * 0.8, 64, 64)
+      // const sphere = new THREE.CapsuleBufferGeometry(size, 64, 64)
+      const caps0 = new CapsuleGeometry(size * 0.8,
+        size * 2,
+        64)
+      const caps1 = new CapsuleGeometry(size * 0.8,
+        size * 2,
+        64, true)
       const matDumb = new THREE.MeshLambertMaterial({ color: colors.dumb })
       const matSmart = new THREE.MeshLambertMaterial({ color: colors.smart })
       // new MeshBasicMaterial({  })
-      const matSphere = new THREE.MeshBasicMaterial({ map: getTexture(), transparent: true, opacity: 0.5 })
-      matSphere.blending = THREE.AdditiveBlending
+      // const matSphere = new THREE.MeshBasicMaterial({ map: getTexture(), transparent: true, opacity: 0.5 })
+      // matSphere.blending = THREE.AdditiveBlending
+      const matCaps0 = new THREE.MeshBasicMaterial({ color: colors.dumb, transparent: true, opacity: 0.5 })
+      matCaps0.blending = THREE.AdditiveBlending
+      const matCaps1 = new THREE.MeshBasicMaterial({ color: colors.smart, transparent: true, opacity: 0.5 })
+      matCaps1.blending = THREE.AdditiveBlending
       const meshDumb = new THREE.Mesh(geometry, matDumb)
       const meshSmart = new THREE.Mesh(geometry, matSmart)
-      this.sphere = new THREE.Mesh(sphere, matSphere)
+      // this.sphere = new THREE.Mesh(sphere, matSphere)
+      const capsule = new THREE.Group()
+      capsule.add(new THREE.Mesh(caps0, matCaps0), new THREE.Mesh(caps1, matCaps1))
+      this.sphere = capsule
       this.sphere.position.setZ(-100)
       meshSmart.rotateX(Math.PI)
       this.group.add(meshDumb, meshSmart)
@@ -142,7 +158,8 @@ export default {
     hitTest (mouse) {
       const { camera, raycaster, sphere } = this
       raycaster.setFromCamera(mouse, camera)
-      const intersects = raycaster.intersectObjects([sphere])
+      // const intersects = raycaster.intersectObjects([sphere])
+      const intersects = raycaster.intersectObjects(sphere.children)
       if (intersects.length > 0) {
         this.$parent.$emit('detail', this.id)
       }
