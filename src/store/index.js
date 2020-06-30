@@ -5,6 +5,7 @@ import Scenarios from 'dir-loader!@/assets/scenarios/scenarios.js' // eslint-dis
 import worker from 'workerize-loader!../assets/js/network' // eslint-disable-line import/no-webpack-loader-syntax
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import * as THREE from 'three'
 // import { resolve, reject } from 'core-js/fn/promise'
 
 Vue.use(Vuex)
@@ -31,11 +32,21 @@ export default new Vuex.Store({
           const models = ['smart', 'dumb'].map(cat => {
             return new Promise((resolve, reject) => {
               loader.load(`./models/${s[cat].model}`, gltf => {
+                console.log(gltf)
                 const model = gltf.scene
-                model.scale.set(400, 400, 400)
                 const sign = cat === 'smart' ? -1 : 1
-                model.translateZ(44 * sign)
                 model.rotateX(Math.PI / 2 * sign)
+                var box = new THREE.Box3().setFromObject(gltf.scene)
+                const size = box.getSize(new THREE.Vector3())
+                const scale = 180 / ((size.x + size.y) / 2)
+                model.scale.set(scale, scale, scale)
+                const x = (box.max.x + box.min.x) / 2 * -scale
+                const y = (box.max.y + box.min.y) / 2 * -scale
+                if (cat === 'smart') {
+                  model.position.set(x, y, box.max.z * -scale)
+                } else {
+                  model.position.set(x, y, box.min.z * -scale)
+                }
                 resolve(model)
               }, undefined, function (error) {
                 reject(error)
