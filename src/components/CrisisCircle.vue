@@ -4,6 +4,9 @@
       <span class="wrapper">
         <span>{{ label }}</span>
       </span>
+      <span class="wrapper">
+        <span>{{ label }}</span>
+      </span>
     </div>
   </div>
 </template>
@@ -40,6 +43,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    position: relative;
 
     > span {
       font-size: 2em;
@@ -51,11 +55,18 @@ export default {
       animation-direction: alternate;
       animation-timing-function: ease-in-out;
       line-height: 1.2;
+      position: absolute;
       // text-shadow: 0px 0px 5px $color-white;
       // background: $color-white;
       > span {
         padding: 0 $spacing / 8;
-        background: $color-white;
+        // background: $color-white;
+      }
+
+      &:first-child {
+        > span {
+          -webkit-text-stroke: 8px $color-white;
+        }
       }
     }
   }

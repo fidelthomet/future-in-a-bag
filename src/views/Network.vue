@@ -103,6 +103,7 @@ export default {
       stroke: $color-black;
       // stroke: #00FFD1;
       stroke-width: 10;
+      stroke-linecap: round;
     }
   }
 
