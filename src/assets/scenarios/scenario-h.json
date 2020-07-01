@@ -13,7 +13,7 @@
   "dumb": {
     "name": "Essen2Go",
     "quote": "Mit dieser gefundenen Essen2Go-Lunchbox, kann ich Lebensmittel jagen und sammeln.",
-    "model": "the-empty-city-dumb.glb"
+    "model": "portable-oxygen-plant.glb"
   },
   "images": [{
     "path": "the-empty-city/carlos-lindner-vBQkyo0gHCQ-unsplash.jpg"

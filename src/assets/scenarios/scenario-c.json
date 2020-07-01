@@ -11,9 +11,9 @@
     "model": "the-empty-city-smart.glb"
   },
   "dumb": {
-    "name": "Essen2Go",
-    "quote": "Mit dieser gefundenen Essen2Go-Lunchbox, kann ich Lebensmittel jagen und sammeln.",
-    "model": "the-empty-city-dumb.glb"
+    "name": "expedition lunchbox 4.0",
+    "quote": "Wenn meine Expeditionen erfolgreich sind, nutze ich die lunchbox 4.0 zum Transport. Sie hat ein Fach für Flüssiges, eins für Trockenes, eins für Frisches, eins für alle weiteren Lebensmittel.",
+    "model": "expedition-lunchbox.glb"
   },
   "images": [{
     "path": "the-empty-city/carlos-lindner-vBQkyo0gHCQ-unsplash.jpg"
