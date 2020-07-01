@@ -8,12 +8,12 @@
   "smart": {
     "name": "Reusable Restau-Box",
     "quote": "Damit keine Einwegverpackungen entstehen, habe ich eine smarte Lunchbox vom Staat erhalten. Sie sind u.A. angereichert mit einer Thermoschicht zum Erhalt der Wärme/Kälte der Lebensmittel.",
-    "model": "the-empty-city-smart.glb"
+    "model": "reusable-restau-box.glb"
   },
   "dumb": {
     "name": "Essen2Go",
     "quote": "Mit dieser gefundenen Essen2Go-Lunchbox, kann ich Lebensmittel jagen und sammeln.",
-    "model": "the-empty-city-dumb.glb"
+    "model": "self-supply-box.glb"
   },
   "images": [{
     "path": "the-empty-city/carlos-lindner-vBQkyo0gHCQ-unsplash.jpg"
