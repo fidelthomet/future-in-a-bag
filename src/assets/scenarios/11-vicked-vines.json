@@ -1,0 +1,18 @@
+{
+  "name": "Vicked Vines",
+  "crises": [
+    "Zusammenbruch des Ökosystems",
+    "Zusammenbruch der Informationsinfrastruktur"
+  ],
+  "description": "Invasive, giftige Ranken befallen die Großstädte. Der öffentliche Raum, städtische Einrichtungen und das Verkehrsangebot sind davon maßgeblich betroffen und können – wenn überhaupt – nur noch eingeschränkt genutzt wird. Die Ranken wachsen extrem schnell und aggressiv auf fast jeder Oberfläche und verdrängen durch ihre perfekte Anpassungsfähigkeit die lokale Fauna. Dadurch nimmt die biologische Vielfalt immer weiter – der Zusammenbruch des Ökosystems steht kurz bevor.",
+  "smart": {
+    "name": "Poison To Poison",
+    "quote": "Diese Technik ist der Wahnsinn! Das Spray erkennt exakt und automatisch, um welche Ranken-Mutation es sich handelt und mischt das passende Gift live an. Es braucht nur wenige Sekunden, bis diese Killer-Pflanzen endlich der Vergangenheit angehören.",
+    "model": "1024-poison.glb"
+  },
+  "dumb": {
+    "name": "Tendril Shears",
+    "quote": "Seit Wochen bin ich nun damit beschäftigt, die Ranken von öffentlichen Einrichtungen zu entfernen. Besonders hartnäckig waren sie am Krankenhaus. Immerhin kann ich damit der Gesellschaft helfen.",
+    "model": "1024-garten.glb"
+  }
+}

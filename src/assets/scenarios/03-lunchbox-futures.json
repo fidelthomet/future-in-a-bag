@@ -1,0 +1,18 @@
+{
+  "name": "Food Spread",
+  "crises": [
+    "Zusammenbruch kritischer Infrastruktur",
+    "Extremwetterereignis"
+  ],
+  "description": "Extreme Wettereignisse und Trockenheit sorgen weltweit immer häufiger für gravierende Ernteausfälle. Die Ressource Nahrungsmittel ist auf dem Markt hart umkämpft – kritische Infrastrukturen und Lieferketten avancieren deshalb zum Ziel von Angriffen. Als Alternative haben sich in vielen Städten kleine autonome Kooperationen zur Nahrungsmittelproduktion zusammengefunden. Mancherorts werden Salate und Gemüse unter der Hochbahn angebaut. Jede*r Bedürftige kann sich davon eine Portion am Tag holen.",
+  "smart": {
+    "name": "Reusable Restau-Box",
+    "quote": "Damit keine Einwegverpackungen entstehen, habe ich eine smarte Lunchbox vom Staat erhalten. Durch hochsensible Thermo-Sensoren bleibt mein Essen entweder kalt oder warm.",
+    "model": "reusable-restau-box.glb"
+  },
+  "dumb": {
+    "name": "Self Supply Box",
+    "quote": "Die zertifizierte Self Supply Box ist meine Berechtigung, lokale Nahrungsmittel ernten zu dürfen. Ich wüsste nicht, wie ich meine Kinder und mich sonst versorgen sollte.",
+    "model": "self-supply-box.glb"
+  }
+}

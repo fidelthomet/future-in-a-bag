@@ -1,0 +1,18 @@
+{
+  "name": "Data Ride",
+  "crises": [
+    "Pandemie",
+    "Wirtschafts- und Internetblase"
+  ],
+  "description": "Eine globale Pandemie hält die Welt in Atem. Die verunsicherten globalen Finanzmärkte und die geringe Nachfrage führen zu einer Rezession der Wirtschaft und schließlich dem Platzen der Internetblase. Auch der Alltag wird durch die Gefahrenlage dominiert: In der Öffentlichkeit dürfen sich Bürger*innen nur mit einer Maske aufhalten. Öffentliche Verkehrsmittel gelten wegen der vielen Kontakte als unsicher, PKW's stehen in städtischen Räumen nur ungenügend zur Verfügung. Die Folge: Der Fahrradverkehr nimmt drastisch zu.",
+  "smart": {
+    "name": "AR-Cycling",
+    "quote": "Fahrradfahren ohne die Augmented Reality-Navigation? Das ist sowas von 2020. Zum Glück haben AR und AI die Internet-Bubble überstanden.",
+    "model": "1024-ar.glb"
+  },
+  "dumb": {
+    "name": "Live Mask",
+    "quote": "Weil alle sozialen Netzwerke heruntergefahren wurden, drücke ich meine Status-Updates nun wie viele andere auf meiner Maske aus. Gestern stand da zum Beispiel: 'Während der letzten Pandemie hatten wir wenigstens noch Twitter'. Haha.",
+    "model": "1024-livemask.glb"
+  }
+}

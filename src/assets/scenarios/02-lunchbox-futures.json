@@ -1,0 +1,18 @@
+{
+  "name": "Lunchbox Futures",
+  "crises": [
+    "Nahrungsmittelkrise",
+    "Inflation"
+  ],
+  "description": "Der große Börsencrash hat viele Veränderungen mit sich gebracht. Geld ist als Zahlungsmittel größtenteils abgelöst – stattdessen bezahlt man in der Regel mit Lebensmitteln, die im ganzen Land knapp sind. Die Regierung versucht so, die wenigen verbliebenen Lebensmittel und Rohstoffe in Umlauf zu bringen. Manche Bürger*innen wagen sich auf Expeditionen zu abgelegenen Lebensmitteldepots, um ihre dürftigen Reserven aufzufüllen.",
+  "smart": {
+    "name": "Conductors Vending-Lunchbox",
+    "quote": "Meine Fahrgäste können ihre Lebensmittel ganz einfach in den smarten Behälter geben und schon lösen sie automatisch ein Ticket für ihre Fahrt. Leider bekomme ich von den Lebensmitteln selbst meist nichts ab.",
+    "model": "1024-conductor.glb"
+  },
+  "dumb": {
+    "name": "Expedition Lunchbox 4.0",
+    "quote": "Wenn meine Expeditionen erfolgreich sind, nutze ich die Lunchbox 4.0 zum Transport. Sie hat ein Fach für Flüssiges, eines für Trockenes, eines für Frisches und eines für alle weiteren Lebensmittel.",
+    "model": "expedition-lunchbox.glb"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Smart Fashion",
+  "crises": [
+    "Datendiebstahl",
+    "Terroranschläge"
+  ],
+  "description": "Kleidungsstücke sind zu einem elementaren Bestandteil der globalen Dateninfrastruktur geworden. Die verbauten Sensoren und Speicherchips in Hemden, Brillen und Jeans werden eingesetzt, um Aktivitäten der Träger*in und Umweltdaten zu messen, zu speichern und zu verteilen. Natürlich sind diese Schnittstellen auch mustergültige Angriffspunkte für Cyberattacken oder können anderweitig ausgenutzt werden. Weil der digitale Datenverkehr so immer unsicherer wird, greifen manche auf altmodische Methoden der Informationsübermittlung zurück.",
+  "dumb": {
+    "name": "Data Pullover Swap Station",
+    "quote": "Die geheimen Checkpoint-Stationen lassen mich die sensiblen Daten-Pullover unauffällig austauschen und übergeben.",
+    "model": "1024-pullover.glb"
+  },
+  "smart": {
+    "name": "Data Steamer",
+    "quote": "Mit dem Data Steamer kann ich alle technischen Applikationen in meiner Kleidung kontrollieren. Bei Bedarf kann ich damit auch neue hinzufügen – oder alles löschen.",
+    "model": "data-streamer.glb"
+  }
+}

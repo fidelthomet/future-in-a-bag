@@ -1,0 +1,18 @@
+{
+  "name": "Rebuild, Recycle",
+  "crises": [
+    "Zwischenstaatliche Konflikte",
+    "Menschengemachte Katastrophe"
+  ],
+  "description": "Das Land steht vor nie dagewesenen Herausforderungen. Nach einem territorialen Konflikt und gravierenden klimatischen Veränderungen steht das Land vor einem Scherbenhaufen. In einer Neujahrsansprache erklärt die Regierung, man werde alles daran setzen, Städte und Regionen möglichst ökologisch und widerstandsfähig wiederaufzubauen. Auch die Infrastruktur benötigt eine Generalsanierung – wichtige Brücken und Transportwege sind weiter nicht benutzbar.",
+  "smart": {
+    "name": "Bridge Builder",
+    "quote": "Brücken statt Mauern! Endlich stehen uns beim Wiederaufbau keine Hürden mehr im Weg. Wir danken den Entwickler*innen von Bottle-Up. Eine Brücke aus einer Flasche – ich kann es nach wie vor kaum glauben.",
+    "model": "1024-bridge.glb"
+  },
+  "dumb": {
+    "name": "Street Marking Toolbox",
+    "quote": "Das einzig positive an der Zerstörung: Endlich ist Schluss mit den autogerechten Städten. Damit auch niemand auf eine andere Idee kommt, markieren wir die Neuordnung des Straßenraums einfach selbst und sorgen so für Gerechtigkeit.",
+    "model": "1024-street.glb"
+  }
+}

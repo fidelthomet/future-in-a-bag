@@ -1,0 +1,18 @@
+{
+  "name": "Patchwork City",
+  "crises": [
+    "Alternde Gesellschaft",
+    "Unverträgliche Stadtplanung"
+  ],
+  "description": "Der demografische Wandel wurde von der Regierung dramatisch unterschätzt: Die Bevölkerung altert weitaus schneller als erhofft. Das schafft nicht nur Probleme in der Wirtschaft und im Sozialsystem, sondern verändert auch die Morphologie von Städten und Dörfern. Einst benötigter Raum steht nun leer, die Infrastruktur lässt sich längst nicht mehr in vollem Umfang instand halten. Deshalb beschließen immer mehr Kommunen, bestimmte Räume und Straßen aufzugeben, um sich zumindest noch um die verbliebenen intakten Quartiere und Infrastrukturen kümmern zu können.",
+  "smart": {
+    "name": "Any surface spray",
+    "quote": "DSchlaglöcher, unbefestigte Wege und Müll – Fahrradfahren ist die reinste Qual. Zum Glück gibt es jetzt das Any Surface Spray. Einmal die Reifen damit eingesprüht, gleitet man über jeden Belag, als wäre es Butter.",
+    "model": "all-weather-protection-spray.glb"
+  },
+  "dumb": {
+    "name": "Concrete Seeds",
+    "quote": "Es ist verrückt. Nur wenige Samen reichen aus, und schon wachsen grüne Pflanzen aus der betongrauen Straße. Die Natur holt sich die Stadt zurück – mit etwas menschlicher Unterstützung.",
+    "model": "1024-concrete.glb"
+  }
+}

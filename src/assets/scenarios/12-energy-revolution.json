@@ -1,0 +1,18 @@
+{
+  "name": "Vicked Vines",
+  "crises": [
+    "Cyber-Angriff",
+    "Energiepreisschock"
+  ],
+  "description": "Gezielte Cyber-Angriffe auf Rechnernetze und die Infrastruktur aller größeren Energiekonzerne führt binnen eines Tages zu einem Energiepreis-Schock. Die Angreifer*innen gelangen an Informationen der Konzerne und finden heraus, wie wenig Strom in Wahrheit ökologisch produziert wird. Auch in den kommenden Jahren ist nur ein Anstieg um mickrige 2% geplant. Mit den Daten und den Zugriff auf die Strompreise können die Konzerne nun leicht erpresst werden. Die Cyber-Spezialisten fordern von den Konzernen einen 100%-igen Umstieg auf Ökostrom.",
+  "smart": {
+    "name": "Stop The Spread",
+    "quote": "Mit diesen speziellen kleinen Computern konnten wir das ganze System lahmlegen und so für eine klimagerechte Zukunft kämpfen. Sie passen unauffällig in jede Handtasche.",
+    "model": "1024-stopspread.glb"
+  },
+  "dumb": {
+    "name": "Hacker-Computer",
+    "quote": "Leider schaffen wir Konzerne es nicht, den Stromfluss mit Klammern an Stromkabeln zu stoppen und die Hacker auszutricksen... Sie haben uns im Griff.",
+    "model": "1024-hacker.glb"
+  }
+}

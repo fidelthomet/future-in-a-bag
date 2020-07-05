@@ -1,0 +1,29 @@
+{
+  "name": "Fresh Air",
+  "crises": [
+    "Menschengemachte Katastrophe",
+    "Zusammenbruch kritischer Infrastruktur"
+  ],
+  "description": "Die Luftverschmutzung in Städten nimmt durch steigenden Autoverkehr und überbaute Grünflächen rasant zu. Die Luft ist derart stark mit CO2 belastet, dass nun viele ursprünglich gesunde Menschen an Atemwegserkrankungen leiden. Die Regierung steht unter besonderem Handlungsdruck, die Wut der in der Bevölkerung steigt von Tag zu Tag.",
+  "smart": {
+    "name": "Oxygen Tank",
+    "quote": "Seitdem der Staat die offiziellen Sauerstoffflaschen ausgibt, kann ich mich endlich wieder sorgenfrei in der Stadt bewegen. Leider wird die Luft dadurch nicht besser.",
+    "model": "1024-oxygen.glb"
+  },
+  "dumb": {
+    "name": "Portable Oxygen Plant",
+    "quote": "Nie im Leben würde ich die staatlich verordneten Sauerstoff-flaschen verwenden. Zum Glück sehe nicht nur ich das so. Die dezentral organisierten Sauerstoffplanzen erfüllen ihren Zweck genauso – und ich kann sicher sein, dass keine anderen Stoffe darunter gemischt sind.",
+    "model": "portable-oxygen-plant.glb"
+  },
+  "images": [{
+    "path": "the-empty-city/carlos-lindner-vBQkyo0gHCQ-unsplash.jpg"
+  }, {
+    "path": "the-empty-city/ella-olsson-lMcRyBx4G50-unsplash.jpg"
+  }, {
+    "path": "the-empty-city/jonathan-borba-5E0d3lfoC1w-unsplash.jpg"
+  }, {
+    "path": "the-empty-city/jonathan-hanna-hvSBya7hX2Q-unsplash.jpg"
+  }, {
+    "path": "the-empty-city/suyab-ahmed-k8mRBejsTys-unsplash.jpg"
+  }]
+}

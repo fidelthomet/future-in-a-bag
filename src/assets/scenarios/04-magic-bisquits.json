@@ -1,0 +1,18 @@
+{
+  "name": "Magic Bisquits",
+  "crises": [
+    "Nahrungsmittelkrise",
+    "Extremwetterereignis"
+  ],
+  "description": "Als Folge kontinuierlicher Extremwetterereignisse kommt es zu massiven Ernteausfällen. Deshalb arbeitet man in Restaurants, Bäckereien oder Zuhause ganz pragmatisch mit vorhandene Lebensmitteln. Als Konsequenz hat sich in manchen Städten eine Szene kleiner Independent-Bäckereien gebildet, die an brachliegenden Orten oder in provisorischen DIY-Shops mit unkonventionellen Zutaten backen, die auf den ersten Blick nicht zusammen passen.",
+  "smart": {
+    "name": "Smart Whisk",
+    "quote": "Mit meinem Smart Whisk werden verschiedenste Zutaten unterschiedlichster Konsistenz in nur einer Minute zu einem cremigen Teig verrührt. Die Leistung von 1000 Drehungen/Sekunde ist einfach phänomenal.",
+    "model": "smart-whisk.glb"
+  },
+  "dumb": {
+    "name": "Mixing Bowl",
+    "quote": "Seit gut einen halben Jahr backe ich nun für die hungrige Bevölkerung. Meine Schüssel begleitet mich dabei überall hin und inspiriert mich Tag für Tag zu neuen Kreationen.",
+    "model": "mixing-bowl.glb"
+  }
+}

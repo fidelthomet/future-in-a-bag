@@ -1,0 +1,18 @@
+{
+  "name": "Desert City",
+  "crises": [
+    "Klimawandel",
+    "Finanzkrise"
+  ],
+  "description": "Die Folgen des Klimawandels bestimmen längst den städtischen Alltag. Anhaltende Hitze und Dürren haben sogar dafür gesorgt, dass viele Parks, Grünflächen und Spielplätze wegen erhöhter Brandgefahr gesperrt werden mussten. Statt den Sommer draußen zu verbringen, sind gerade Menschen in dicht besiedelten Gebieten gezwungen, in ihren Häusern auszuharren oder Ausflüge aufs Land zu machen. Darunter leiden vulnerable Gruppen wie zum Beispiel Kinder besonders stark.",
+  "smart": {
+    "name": "Weather Machine",
+    "quote": "Ich kann diesen unerbitterlich glühenden Feuerball, den sie Sonne nennen, einfach nicht mehr sehen. Mithilfe der Weather Machine kann ich für mich und meine Kinder wenigstens auf unserem Balkon ein eigenes Mikroklima erzeugen. Ich vermisse die guten alten Jahreszeiten und den Regen.",
+    "model": "1024-weather.glb"
+  },
+  "dumb": {
+    "name": "Pop-Up Plant",
+    "quote": "Durch die Pop Up-Pflanzen, die sich in Sekundenschnelle zu überlebensgroßen Pflanzen-Imitaten aufpusten, kann mein Kind wenigstens ein Stück Natur auf dem tristen Indoor-Spielplatz erleben.",
+    "model": "fast-growing-plant.glb"
+  }
+}

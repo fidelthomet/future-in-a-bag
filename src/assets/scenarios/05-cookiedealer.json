@@ -1,0 +1,18 @@
+{
+  "name": "Cookiedealer",
+  "crises": [
+    "Arbeitslosigkeit",
+    "Deflation"
+  ],
+  "description": "Seit der Deflation – also der de facto Entwertung des Geldes – ist jeder Gang in den Supermarkt ein Abenteuer. Vermeintlich überflüssige Produkte wie Süßwaren oder Gebäck werden kaum mehr hergestellt und so stehen viele der Regale leer. Damit haben besonders Kinder ihre Probleme. Spitzfindige Jugendliche haben deshalb damit begonnen, auf Spielplätzen Süßigkeiten an die Kinder zu verkaufen. Die Eltern brüskieren sich besonders darüber, dass die illegalen Keksen extrem viel Zucker enthalten.",
+  "smart": {
+    "name": "No Sugar Cookie",
+    "quote": "Was auf den Spielplätzen vor sich geht, finde ich persönlich nicht hinnehmbar. Wenigstens reagieren die Dealer auf die Beschwerden der Eltern und bieten zuckerfreie Cookies an. Was die kosten, kann man sich denken…",
+    "model": "no-sugar-cookies.glb"
+  },
+  "dumb": {
+    "name": "Oatmeal Cone",
+    "quote": "Sobald mein Kinder hungrig nach Süßem sind, gebe ich ihnen schnell Haferflocken aus dieser besonderen Tüte. Danach sind sie meistens satt ist und die Kekse sind vergessen.",
+    "model": "oatmeal-cone.glb"
+  }
+}
