@@ -7,7 +7,7 @@ export default {
   inject: ['getContainer', '$mouse', '$camera'],
   props: {
     size: {
-      default: 128,
+      default: 200,
       type: Number
     },
     x: {

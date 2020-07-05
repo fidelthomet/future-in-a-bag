@@ -8,11 +8,13 @@
   "smart": {
     "name": "Weather Machine",
     "quote": "Ich kann diesen unerbitterlich glühenden Feuerball, den sie Sonne nennen, einfach nicht mehr sehen. Mithilfe der Weather Machine kann ich für mich und meine Kinder wenigstens auf unserem Balkon ein eigenes Mikroklima erzeugen. Ich vermisse die guten alten Jahreszeiten und den Regen.",
-    "model": "1024-weather.glb"
+    "model": "1024-weather.glb",
+    "scale": 1.7
   },
   "dumb": {
     "name": "Pop-Up Plant",
     "quote": "Durch die Pop Up-Pflanzen, die sich in Sekundenschnelle zu überlebensgroßen Pflanzen-Imitaten aufpusten, kann mein Kind wenigstens ein Stück Natur auf dem tristen Indoor-Spielplatz erleben.",
-    "model": "fast-growing-plant.glb"
+    "model": "fast-growing-plant.glb",
+    "scale": 1.55
   }
 }

@@ -8,7 +8,8 @@
   "smart": {
     "name": "Bridge Builder",
     "quote": "Brücken statt Mauern! Endlich stehen uns beim Wiederaufbau keine Hürden mehr im Weg. Wir danken den Entwickler*innen von Bottle-Up. Eine Brücke aus einer Flasche – ich kann es nach wie vor kaum glauben.",
-    "model": "1024-bridge.glb"
+    "model": "1024-bridge.glb",
+    "scale": 1.4
   },
   "dumb": {
     "name": "Street Marking Toolbox",

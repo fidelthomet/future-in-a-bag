@@ -82,8 +82,8 @@ export default {
       this.controls.minDistance = 100
       this.controls.maxDistance = 500
 
-      this.controls.minZoom = 0.5
-      this.controls.maxZoom = 5
+      this.controls.minZoom = 0.4
+      this.controls.maxZoom = 2
 
       this.controls.addEventListener('change', () => {
         this.onMouseMove()

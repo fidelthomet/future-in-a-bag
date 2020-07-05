@@ -8,11 +8,13 @@
   "smart": {
     "name": "AR-Cycling",
     "quote": "Fahrradfahren ohne die Augmented Reality-Navigation? Das ist sowas von 2020. Zum Glück haben AR und AI die Internet-Bubble überstanden.",
-    "model": "1024-ar.glb"
+    "model": "1024-ar.glb",
+    "scale": 1.2
   },
   "dumb": {
     "name": "Live Mask",
     "quote": "Weil alle sozialen Netzwerke heruntergefahren wurden, drücke ich meine Status-Updates nun wie viele andere auf meiner Maske aus. Gestern stand da zum Beispiel: 'Während der letzten Pandemie hatten wir wenigstens noch Twitter'. Haha.",
-    "model": "1024-livemask.glb"
+    "model": "1024-livemask.glb",
+    "scale": 1.2
   }
 }

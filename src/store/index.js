@@ -38,7 +38,13 @@ export default new Vuex.Store({
                 model.rotateX(Math.PI / 2 * sign)
                 var box = new THREE.Box3().setFromObject(gltf.scene)
                 const size = box.getSize(new THREE.Vector3())
-                const scale = 180 / ((size.x + size.y + size.z) / 3)
+                let scale = 200 / ((size.x + size.y + size.z) / 3)
+                if (size.z * scale > 220) {
+                  scale = 190 / size.z
+                }
+                if (s[cat].scale != null) {
+                  scale *= s[cat].scale
+                }
                 model.scale.set(scale, scale, scale)
                 const x = (box.max.x + box.min.x) / 2 * -scale
                 const y = (box.max.y + box.min.y) / 2 * -scale

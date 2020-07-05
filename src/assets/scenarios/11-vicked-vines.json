@@ -8,7 +8,8 @@
   "smart": {
     "name": "Poison To Poison",
     "quote": "Diese Technik ist der Wahnsinn! Das Spray erkennt exakt und automatisch, um welche Ranken-Mutation es sich handelt und mischt das passende Gift live an. Es braucht nur wenige Sekunden, bis diese Killer-Pflanzen endlich der Vergangenheit angehören.",
-    "model": "1024-poison.glb"
+    "model": "1024-poison.glb",
+    "scale": 1.3
   },
   "dumb": {
     "name": "Tendril Shears",

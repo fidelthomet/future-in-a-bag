@@ -43,7 +43,7 @@ export default {
   .info {
     display: flex;
     position: absolute;
-    transform: translate(calc(-33% + #{$spacing / 2}), calc(-200px - 100%));
+    transform: translate(calc(-33% + #{$spacing / 2}), calc(-240px - 100%));
     width: 960px;
 
     .title {
@@ -79,13 +79,13 @@ export default {
 
     &.smart {
       border-right: 10px solid $color-smart;
-      transform: translate(calc(-170px - 100%), calc(-20px - 100%));
+      transform: translate(calc(-220px - 100%), calc(-20px - 100%));
       text-align: right;
     }
 
     &.dumb {
       border-left: 10px solid $color-dumb;
-      transform: translate(calc(170px), 20px);
+      transform: translate(calc(220px), 20px);
     }
   }
 }
