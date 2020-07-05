@@ -15,6 +15,7 @@
   "dumb": {
     "name": "Tendril Shears",
     "quote": "Seit Wochen bin ich nun damit beschäftigt, die Ranken von öffentlichen Einrichtungen zu entfernen. Besonders hartnäckig waren sie am Krankenhaus. Immerhin kann ich damit der Gesellschaft helfen.",
-    "model": "1024-garten.glb"
+    "model": "1024-scissors.glb",
+    "scale": 1.3
   }
 }
