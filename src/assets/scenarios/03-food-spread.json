@@ -1,5 +1,6 @@
 {
   "name": "Food Spread",
+  "html": "Food<br>Spread",
   "crises": [
     "Zusammenbruch kritischer Infrastruktur",
     "Extremwetterereignis"

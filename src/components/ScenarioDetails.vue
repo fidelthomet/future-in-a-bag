@@ -1,7 +1,7 @@
 <template>
   <div class="scenario-details" :style="{transform: `translate(${x}px, ${-y}px)`}">
     <div class="info">
-      <div class="title">{{ scenario.name }}</div>
+      <div class="title" v-html="scenario.html || scenario.name"/>
       <div class="description">{{ scenario.description }}</div>
     </div>
     <div class="quote smart">
@@ -43,11 +43,12 @@ export default {
   .info {
     display: flex;
     position: absolute;
-    transform: translate(calc(-33% + #{$spacing / 2}), calc(-240px - 100%));
-    width: 960px;
+    transform: translate(calc(-50% + #{$spacing / 2}), calc(-240px - 100%));
+    width: 1280px;
 
     .title {
-      width: 320px;
+      // hyphens: auto;
+      width: 640px;
       font-size: 3.6em;
       // font-weight: 900;
       font-variation-settings: "wght" 900, "slnt" -10;

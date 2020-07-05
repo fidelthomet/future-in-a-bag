@@ -32,7 +32,6 @@ export default new Vuex.Store({
           const models = ['smart', 'dumb'].map(cat => {
             return new Promise((resolve, reject) => {
               loader.load(`./models/${s[cat].model}`, gltf => {
-                console.log(gltf)
                 const model = gltf.scene
                 const sign = cat === 'smart' ? -1 : 1
                 model.rotateX(Math.PI / 2 * sign)
