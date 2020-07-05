@@ -82,7 +82,7 @@ export default {
       this.controls.minDistance = 100
       this.controls.maxDistance = 500
 
-      this.controls.minZoom = 0.4
+      this.controls.minZoom = 0.25
       this.controls.maxZoom = 2
 
       this.controls.addEventListener('change', () => {
