@@ -10,7 +10,7 @@
     </svg>
     <ThreeScene :width="width" :height="height" @position="setPosition" @click="clicked($event)" @detail="detail($event)">
       <ScenarioBubble v-for="(s, i) in scenarios" :key="`scenario-${i}`"
-        :id="s.hash" :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
+        :id="s.hash" :axis="s.axis" :offset="s.timeOffset" :x="s.x * networkScale" :y="s.y * networkScale"
         :smart="s.models.smart" :dumb="s.models.dumb"/>
     </ThreeScene>
     <div class="overlay">
@@ -30,7 +30,7 @@
     </transition>
     <ThreeScene :width="width" :height="height" @position="setPosition" non-interactive :position="position">
       <ScenarioBubble v-for="(s, i) in scenarios.filter(d => d.hash === highlightHash)" :key="`scenario-${i}`"
-        :axis="s.axis" :x="s.x * networkScale" :y="s.y * networkScale"
+        :axis="s.axis" :offset="s.timeOffset" :x="s.x * networkScale" :y="s.y * networkScale"
         :smart="s.models.smart" :dumb="s.models.dumb"/>
     </ThreeScene>
   </div>

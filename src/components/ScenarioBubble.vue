@@ -30,6 +30,10 @@ export default {
       type: Object,
       default: () => new THREE.Vector3(0, 0, 1)
     },
+    offset: {
+      default: 0,
+      type: Number
+    },
     id: {
       default: null
     }
@@ -129,10 +133,10 @@ export default {
       return new THREE.DataTexture(color, 2, 2, THREE.RGBFormat)
     },
     animate (t = 0) {
-      const { animate, group, sphere, axis } = this
+      const { animate, group, sphere, axis, offset } = this
       this.group.visible = true
-      group.setRotationFromAxisAngle(axis, t * 0.001)
-      sphere.setRotationFromAxisAngle(axis, t * 0.001)
+      group.setRotationFromAxisAngle(axis, t * 0.001 + offset * 360)
+      sphere.setRotationFromAxisAngle(axis, t * 0.001 + offset * 360)
       requestAnimationFrame(animate)
     },
     setPosition () {

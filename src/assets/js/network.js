@@ -12,7 +12,8 @@ export function network ({ scenarios }) {
 
   scenarios.forEach(s => {
     s.type = 'scenario'
-    s.axis = new Vector3(Math.random() - 0.5, Math.random() - 0.5, (Math.random() - 0.5) * 0.5).normalize()
+    s.axis = new Vector3((Math.random() + 0.5) * (Math.random() > 0.5 ? 1 : -1), (Math.random() + 0.5) * (Math.random() > 0.5 ? 1 : -1), (Math.random() * 0.3) * (Math.random() > 0.5 ? 1 : -1)).normalize()
+    s.timeOffset = Math.random()
   })
 
   const nodes = [
