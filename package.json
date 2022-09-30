@@ -10,7 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "d3-force": "^2.0.1",
-    "d3-scale": "^3.2.1",
+    "d3-scale": "^4.0.2",
     "normalize-scss": "^7.0.1",
     "register-service-worker": "^1.7.1",
     "three": "^0.117.1",
